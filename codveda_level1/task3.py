@@ -1,0 +1,23 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+df = pd.read_csv("1) iris.csv")
+df["species"].value_counts().plot(kind="bar")
+plt.title("Number of Iris Flowers by Species")
+plt.xlabel("Species")
+plt.ylabel("Count")
+plt.savefig("bar_plot.png")
+plt.show()
+plt.plot(df["sepal_length"])
+plt.title("Sepal Length")
+plt.xlabel("Data Points")
+plt.ylabel("Sepal Length")
+plt.savefig("line_chart.png")
+plt.show()
+sns.scatterplot(data=df, x="sepal_length", y="petal_length", hue="species")
+plt.title("Sepal Length vs Petal Length")
+plt.xlabel("Sepal Length")
+plt.ylabel("Petal Length")
+plt.legend(title="Species")
+plt.savefig("scatter_plot.png")
+plt.show()

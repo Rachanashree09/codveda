@@ -1,0 +1,11 @@
+import pandas as pd
+df = pd.read_csv("1) iris.csv")
+print("Missing values:")
+print(df.isnull().sum())
+df = df.fillna(df.median(numeric_only=True))
+df = df.drop_duplicates()
+df["species"] = df["species"].str.strip().str.lower()
+df.to_csv("cleaned_iris.csv", index=False)
+print("\nCleaned dataset:")
+print(df.head())
+print("\nData cleaning completed!")
